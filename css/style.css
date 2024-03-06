@@ -27,8 +27,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 6%;
-  background-color: rgba(1, 1, 1, 0, 8);
+  padding: 1.4rem 7%;
+  background-color: rgb(1, 1, 1 0.8);
   border-bottom: 1px solid #edebeb;
   position: fixed;
   top: 0;

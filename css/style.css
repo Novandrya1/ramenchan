@@ -230,12 +230,15 @@ body {
 
 .menu .row .menu-card {
   text-align: center;
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
 }
 
 .menu .row .menu-card img {
-  border-radius: 50%;
-  width: 80%;
+  border-radius: 5%;
+  width: 30rem;
+  max-width: 30rem;
+  padding: 0.5rem;
+ 
 }
 
 .menu .row .menu-card .menu-card-title {
@@ -431,4 +434,5 @@ footer .credit a {
   .menu p {
     font-size: 1rem;
   }
+
 }

@@ -41,8 +41,11 @@ body {
   font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
-  font-style: italic;
-}
+  font-family: "Protest Revolution", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  }
+  
 
 .navbar .navbar-logo span {
   color: var(--primary);

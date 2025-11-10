@@ -199,8 +199,11 @@
     .hero-stats {
         position: static;
         transform: none;
-        margin-top: 3rem;
+        margin: 3rem auto 0;
         gap: 2rem;
+        justify-content: center;
+        max-width: 100%;
+        padding: 0 1rem;
     }
     
     .hero-modern .floating-element {

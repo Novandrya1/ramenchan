@@ -1,0 +1,55 @@
+/* Hero Mobile Background Fix */
+
+/* Ensure background image loads on mobile */
+@media (max-width: 768px) {
+    .hero-modern,
+    .hero {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Force background image to show */
+    .hero-modern::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../img/header-bg.jpeg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.8;
+    }
+    
+    .hero-modern::before {
+        z-index: 1;
+    }
+    
+    .hero-modern .content,
+    .hero-modern .hero-stats {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .hero-modern,
+    .hero {
+        background-attachment: scroll !important;
+    }
+}
+
+/* Android Chrome specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .hero-modern,
+    .hero {
+        background-attachment: scroll !important;
+    }
+}

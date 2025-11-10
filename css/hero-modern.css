@@ -7,9 +7,17 @@
                 url("../img/header-bg.jpeg.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+}
+
+/* Background attachment fixed hanya untuk desktop */
+@media (min-width: 769px) and (hover: hover) {
+    .hero-modern {
+        background-attachment: fixed;
+    }
 }
 
 .hero-modern::before {
@@ -170,6 +178,13 @@
 }
 
 @media (max-width: 768px) {
+    .hero-modern {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    
     .hero-modern .cta-group {
         flex-direction: column;
         align-items: center;

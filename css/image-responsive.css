@@ -1,0 +1,155 @@
+/* Image Responsive Styles */
+
+/* General image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Promo images */
+.promo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* News images */
+.news-card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.news-card.main img {
+    height: 250px;
+}
+
+.news-card.small img {
+    height: 120px;
+}
+
+/* About section image */
+.about-image-main img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Restaurant interior image */
+.restaurant-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Menu images */
+.menu-card img,
+.menu-card-modern img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Mobile responsive images */
+@media (max-width: 768px) {
+    .promo-card img {
+        height: 180px;
+    }
+    
+    .news-card.main img {
+        height: 200px;
+    }
+    
+    .news-card.small img {
+        height: 100px;
+    }
+    
+    .about-image-main img {
+        height: 250px;
+    }
+    
+    .restaurant-image img {
+        height: 250px;
+    }
+    
+    .menu-card img,
+    .menu-card-modern img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-card img {
+        height: 160px;
+    }
+    
+    .news-card.main img {
+        height: 180px;
+    }
+    
+    .news-card.small img {
+        height: 80px;
+        width: 80px;
+        flex-shrink: 0;
+    }
+    
+    .about-image-main img {
+        height: 200px;
+    }
+    
+    .restaurant-image img {
+        height: 200px;
+    }
+    
+    .menu-card img,
+    .menu-card-modern img {
+        height: 160px;
+    }
+}
+
+/* Loading placeholder */
+img[src*="unsplash.com"] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Image hover effects */
+.promo-card img,
+.news-card img,
+.menu-card img,
+.menu-card-modern img {
+    transition: transform 0.3s ease;
+}
+
+.promo-card:hover img,
+.news-card:hover img,
+.menu-card:hover img,
+.menu-card-modern:hover img {
+    transform: scale(1.05);
+}
+
+/* Lazy loading support */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}

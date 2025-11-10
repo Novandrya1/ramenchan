@@ -519,10 +519,13 @@
         font-size: 1.2rem;
         justify-content: center;
         text-align: center;
+        color: #ffffff;
+        font-weight: 500;
     }
     
     .navbar-nav a:hover {
         padding-left: 1rem;
+        color: #ff6b35;
     }
     
     .navbar-extra {

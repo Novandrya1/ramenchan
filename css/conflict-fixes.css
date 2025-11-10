@@ -13,6 +13,29 @@ body.menu-open::before {
     z-index: 9998;
 }
 
+/* Ensure hamburger menu text is always visible */
+@media (max-width: 768px) {
+    .navbar .navbar-nav a {
+        color: #ffffff !important;
+        font-weight: 500 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        text-shadow: none !important;
+        background-clip: initial !important;
+        -webkit-text-fill-color: initial !important;
+    }
+    
+    .navbar .navbar-nav a:hover {
+        color: #ff6b35 !important;
+        background: rgba(255, 107, 53, 0.2) !important;
+    }
+    
+    .navbar .navbar-nav {
+        background: rgba(26, 26, 26, 0.98) !important;
+        border-left: 2px solid #ff6b35 !important;
+    }
+}
+
 /* Prevent CSS conflicts dengan specificity yang tepat */
 @media (max-width: 768px) {
     /* Override hanya yang diperlukan */
@@ -47,6 +70,14 @@ body.menu-open::before {
     
     .navbar .navbar-nav.active {
         transform: translateX(0);
+    }
+    
+    /* Ensure text is visible on small screens */
+    .navbar .navbar-nav a {
+        font-family: 'Poppins', Arial, sans-serif !important;
+        color: #ffffff !important;
+        font-size: 1.2rem !important;
+        line-height: 1.4 !important;
     }
 }
 

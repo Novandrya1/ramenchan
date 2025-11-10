@@ -1,11 +1,21 @@
 /* Order Page Mobile Styles */
 
 @media (max-width: 768px) {
+    /* Order Content Spacing */
+    .order-content {
+        padding: 2rem 0 !important;
+    }
+    
+    .container {
+        padding: 0 1rem !important;
+    }
+    
     /* Order Process Steps */
     .process-steps {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
         gap: 1rem !important;
-        text-align: center !important;
+        margin-bottom: 2rem !important;
     }
     
     .step-item {
@@ -67,47 +77,90 @@
     
     /* Order Container */
     .order-container {
+        display: flex !important;
         flex-direction: column !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
+        margin-top: 1rem !important;
     }
     
     .form-container {
         order: 2 !important;
-        padding: 1.5rem !important;
+        padding: 1.5rem 1rem !important;
+        background: var(--gray) !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
     }
     
     .cart-summary {
         order: 1 !important;
-        padding: 1.5rem !important;
+        padding: 1.5rem 1rem !important;
         margin-bottom: 0 !important;
+        position: static !important;
+        top: auto !important;
+    }
+    
+    /* Quick Add Section */
+    .quick-add-section {
+        margin-bottom: 2rem !important;
+    }
+    
+    .quick-add-section h3 {
+        text-align: center !important;
+        margin-bottom: 1.5rem !important;
+        font-size: 1.3rem !important;
     }
     
     /* Form Styles */
+    .form-container h3 {
+        text-align: center !important;
+        margin-bottom: 1.5rem !important;
+        color: var(--white) !important;
+        font-size: 1.3rem !important;
+    }
+    
     .form-row {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
         gap: 1rem !important;
     }
     
     .form-group {
         margin-bottom: 1.5rem !important;
+        width: 100% !important;
     }
     
     .form-group label {
         font-size: 0.9rem !important;
         margin-bottom: 0.5rem !important;
+        color: var(--white) !important;
+        font-weight: 500 !important;
     }
     
     .form-input {
         padding: 1rem !important;
         font-size: 1rem !important;
         border-radius: 8px !important;
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 2px solid rgba(255, 255, 255, 0.1) !important;
+        color: var(--white) !important;
+    }
+    
+    .form-input:focus {
+        border-color: var(--primary) !important;
+        background: rgba(255, 255, 255, 0.1) !important;
     }
     
     .btn-primary {
         width: 100% !important;
         padding: 1.2rem !important;
         font-size: 1.1rem !important;
-        margin-top: 1rem !important;
+        margin-top: 1.5rem !important;
+        background: linear-gradient(45deg, var(--primary), var(--secondary)) !important;
+        border: none !important;
+        border-radius: 8px !important;
+        color: var(--white) !important;
+        font-weight: 600 !important;
     }
     
     /* Payment Details Mobile */
@@ -205,52 +258,42 @@
 }
 
 @media (max-width: 480px) {
-    /* Extra small mobile adjustments */
+    .container {
+        padding: 0 0.5rem !important;
+    }
+    
     .quick-menu-grid {
         grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
     }
     
     .step-item {
         flex-direction: column !important;
         text-align: center !important;
-    }
-    
-    .step-number {
-        margin-right: 0 !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    .step-text {
-        text-align: center !important;
-    }
-    
-    .payment-card {
-        padding: 1rem !important;
-    }
-    
-    .qris-code img {
-        width: 120px !important;
-        height: 120px !important;
-    }
-    
-    .bank-item {
-        padding: 0.8rem !important;
+        padding: 1rem 0.5rem !important;
     }
     
     .form-container,
     .cart-summary {
+        padding: 1rem 0.8rem !important;
+        margin: 0 !important;
+    }
+    
+    .form-input {
+        padding: 0.9rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .btn-primary {
         padding: 1rem !important;
+        font-size: 1rem !important;
     }
     
-    .item-quantity {
-        flex-direction: column !important;
-        align-items: center !important;
+    .payment-card {
+        padding: 1rem 0.8rem !important;
     }
     
-    .qty-controls {
-        display: flex !important;
-        align-items: center !important;
-        gap: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+    .cart-item {
+        padding: 0.8rem !important;
     }
 }

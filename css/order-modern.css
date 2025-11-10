@@ -1,6 +1,28 @@
 /* Modern Order Page Styles */
+.breadcrumb {
+    background: var(--gray);
+    padding: 1rem 0;
+    margin-top: 80px;
+}
+
+.breadcrumb .container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
 .order-hero {
-    padding: 12rem 0 4rem;
+    padding: 8rem 0 4rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     text-align: center;
     color: var(--white);
@@ -101,6 +123,49 @@
     font-size: 1.5rem;
 }
 
+.quick-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.quick-menu-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quick-menu-item:hover {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.quick-menu-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.quick-menu-item h4 {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.quick-menu-item p {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
 .order-container {
     display: grid;
     grid-template-columns: 1fr 400px;
@@ -131,6 +196,100 @@
     height: fit-content;
     position: sticky;
     top: 100px;
+}
+
+.cart-summary h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.cart-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-item h4 {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.item-price {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qty-btn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.qty-display {
+    color: var(--white);
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+}
+
+.remove-item {
+    background: #dc3545;
+    color: var(--white);
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.cart-total {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.total-final {
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.empty-cart {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 2rem;
+}
+
+.empty-cart a {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 .delivery-info {
@@ -189,6 +348,177 @@
     font-weight: 500;
 }
 
+.payment-details {
+    margin-top: 1rem;
+}
+
+.payment-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.payment-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.payment-icon i {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.payment-content {
+    flex: 1;
+}
+
+.payment-content h4 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.payment-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+.bank-accounts {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bank-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 1rem;
+    flex: 1;
+}
+
+.bank-logo {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.account-number {
+    display: block;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.account-name {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.payment-total {
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.payment-total span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.payment-total strong {
+    color: var(--primary);
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.payment-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.qris-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.qris-code img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.app-icons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.app-icon {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.success-message {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    color: #28a745;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.error-message {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .process-steps {
         grid-template-columns: repeat(2, 1fr);
@@ -211,5 +541,18 @@
     
     .payment-methods {
         grid-template-columns: 1fr;
+    }
+    
+    .quick-menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .bank-accounts {
+        flex-direction: column;
+    }
+    
+    .qris-container {
+        flex-direction: column;
+        text-align: center;
     }
 }

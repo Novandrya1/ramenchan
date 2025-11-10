@@ -209,6 +209,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 qrisDetails.style.display = 'block';
                 updatePaymentTotal();
             }
+            
+            // Re-initialize feather icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
         }
     };
     

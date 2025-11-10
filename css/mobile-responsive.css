@@ -568,10 +568,7 @@
         font-size: 0.9rem !important;
     }
     
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-    }
+    /* Hero stats handled by hero-stats-fix.css */
     
     /* About Section */
     .about-stats {

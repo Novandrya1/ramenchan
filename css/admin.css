@@ -1,8 +1,12 @@
 /* Modern Admin Dashboard Styles */
 .admin-hero {
-    padding: 10rem 0 2rem;
+    padding: 8rem 0 3rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--white);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .admin-header {

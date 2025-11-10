@@ -1,0 +1,27 @@
+{
+  "name": "restorant-ramen",
+  "version": "1.0.0",
+  "description": "Modern Japanese Ramen Restaurant Website",
+  "main": "index.html",
+  "scripts": {
+    "commit": "node auto-commit.js",
+    "commit:win": "auto-commit.bat",
+    "commit:unix": "bash auto-commit.sh",
+    "serve": "python -m http.server 8000",
+    "serve:php": "php -S localhost:8000"
+  },
+  "keywords": [
+    "restaurant",
+    "ramen",
+    "japanese",
+    "food",
+    "website"
+  ],
+  "author": "RamenChan Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "."
+  }
+}

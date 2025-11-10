@@ -1,20 +1,5 @@
 // Promo page functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu
-    const navbarNav = document.querySelector('.navbar-nav');
-    const hamburger = document.querySelector('#hamburger-menu');
-    
-    if (hamburger) {
-        hamburger.onclick = () => {
-            navbarNav.classList.toggle('active');
-        };
-    }
-    
-    document.addEventListener('click', function(e) {
-        if (hamburger && !hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
-            navbarNav.classList.remove('active');
-        }
-    });
     
     // Promo filter functionality
     const filterBtns = document.querySelectorAll('.filter-btn');

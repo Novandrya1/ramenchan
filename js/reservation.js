@@ -1,21 +1,5 @@
 // Reservation functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Toggle class active untuk mobile menu
-    const navbarNav = document.querySelector('.navbar-nav');
-    const hamburger = document.querySelector('#hamburger-menu');
-    
-    if (hamburger) {
-        hamburger.onclick = () => {
-            navbarNav.classList.toggle('active');
-        };
-    }
-    
-    // Klik di luar sidebar untuk menghilangkan nav
-    document.addEventListener('click', function(e) {
-        if (hamburger && !hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
-            navbarNav.classList.remove('active');
-        }
-    });
     
     // Reservation form handling
     const reservationForm = document.getElementById('reservation-form');

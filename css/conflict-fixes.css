@@ -23,6 +23,8 @@ body.menu-open::before {
         text-shadow: none !important;
         background-clip: initial !important;
         -webkit-text-fill-color: initial !important;
+        display: flex !important;
+        align-items: center !important;
     }
     
     .navbar .navbar-nav a:hover {
@@ -33,6 +35,12 @@ body.menu-open::before {
     .navbar .navbar-nav {
         background: rgba(26, 26, 26, 0.98) !important;
         border-left: 2px solid #ff6b35 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .navbar .navbar-nav.active {
+        right: 0 !important;
     }
 }
 

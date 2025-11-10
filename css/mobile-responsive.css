@@ -774,15 +774,7 @@
         gap: 0.5rem !important;
     }
     
-    .hero-stats {
-        display: flex !important;
-        justify-content: center !important;
-        gap: 1rem !important;
-        margin: 2rem auto 0 !important;
-        padding: 0 1rem !important;
-        width: 100% !important;
-        max-width: 400px !important;
-    }
+    /* Hero stats handled by hero-stats-fix.css */
     
     .stat-item {
         padding: 1rem 0.5rem !important;

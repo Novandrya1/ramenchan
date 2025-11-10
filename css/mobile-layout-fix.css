@@ -1,60 +1,20 @@
 /* Mobile Layout Fixes - No Conflicts */
 
-/* Mobile Layout Fixes - Higher Specificity */
+/* Background Brightness Fix Only */
 @media (max-width: 768px) {
-    /* Section Spacing Override */
-    .order-content,
-    .reservation-form-section {
-        padding: 2rem 0;
-    }
-    
-    /* Hero Sections - Bright Background */
-    .order-hero,
-    .reservation-hero {
+    /* Hero background override only */
+    body .order-hero,
+    body .reservation-hero {
         background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
-        padding: 5rem 0 2rem !important;
-        min-height: 30vh !important;
-    }
-    
-    .order-hero h1,
-    .reservation-hero h1 {
-        font-size: 2rem !important;
-        color: #ffffff !important;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.3) !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    .order-hero p,
-    .reservation-hero p {
-        font-size: 1rem !important;
-        color: rgba(255,255,255,0.95) !important;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.2) !important;
     }
 }
 
-/* Order Page Mobile Layout - Specific Overrides */
+/* Order Page - Background Brightness Only */
 @media (max-width: 768px) {
-    .order-content {
-        padding: 1.5rem 0;
-    }
-    
     .cart-summary {
-        margin-bottom: 2rem;
-        position: static !important;
-        background: rgba(255,255,255,0.1) !important;
-        backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255,107,53,0.3) !important;
+        background: rgba(255,255,255,0.12) !important;
     }
     
-    .form-container {
-        background: rgba(255,255,255,0.05) !important;
-        backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255,107,53,0.2) !important;
-        border-radius: 12px;
-        padding: 1.5rem;
-    }
-    
-    /* Background overrides only */
     .form-container {
         background: rgba(255,255,255,0.08) !important;
     }

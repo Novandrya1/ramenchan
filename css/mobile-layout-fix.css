@@ -1,14 +1,10 @@
 /* Mobile Layout Fixes - No Conflicts */
 
-/* Universal Mobile Container */
+/* Mobile Layout Fixes - Higher Specificity */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-        max-width: 100%;
-    }
-    
-    /* Section Spacing */
-    section {
+    /* Section Spacing Override */
+    .order-content,
+    .reservation-form-section {
         padding: 2rem 0;
     }
     
@@ -36,15 +32,10 @@
     }
 }
 
-/* Order Page Mobile Layout */
+/* Order Page Mobile Layout - Specific Overrides */
 @media (max-width: 768px) {
     .order-content {
         padding: 1.5rem 0;
-    }
-    
-    .order-container {
-        display: block !important;
-        gap: 0 !important;
     }
     
     .cart-summary {
@@ -63,150 +54,60 @@
         padding: 1.5rem;
     }
     
-    .form-row {
-        display: block !important;
-    }
-    
-    .form-group {
-        margin-bottom: 1.5rem;
-        width: 100% !important;
+    /* Background overrides only */
+    .form-container {
+        background: rgba(255,255,255,0.08) !important;
     }
     
     .form-input {
-        width: 100% !important;
-        padding: 1rem !important;
-        background: rgba(255,255,255,0.1) !important;
-        border: 2px solid rgba(255,255,255,0.2) !important;
-        color: #ffffff !important;
-        border-radius: 8px !important;
+        background: rgba(255,255,255,0.12) !important;
+        border-color: rgba(255,255,255,0.25) !important;
     }
     
     .form-input:focus {
-        border-color: #ff6b35 !important;
-        background: rgba(255,255,255,0.15) !important;
-    }
-    
-    .btn-primary {
-        width: 100% !important;
-        padding: 1.2rem !important;
-        background: linear-gradient(45deg, #ff6b35, #f7931e) !important;
-        border: none !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-        border-radius: 8px !important;
+        background: rgba(255,255,255,0.18) !important;
     }
 }
 
-/* Reservation Page Mobile Layout */
+/* Reservation Page Mobile Layout - Background Only */
 @media (max-width: 768px) {
-    .reservation-container {
-        display: block !important;
-        gap: 0 !important;
-    }
-    
-    .visual-side {
-        margin-bottom: 2rem;
-    }
-    
     .modern-form {
-        background: rgba(255,255,255,0.05) !important;
-        backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255,107,53,0.2) !important;
-    }
-    
-    .modern-form .form-row {
-        display: block !important;
+        background: rgba(255,255,255,0.08) !important;
     }
     
     .modern-form input,
     .modern-form select,
     .modern-form textarea {
-        background: rgba(255,255,255,0.1) !important;
-        border: 2px solid rgba(255,255,255,0.2) !important;
-        color: #ffffff !important;
+        background: rgba(255,255,255,0.12) !important;
+        border-color: rgba(255,255,255,0.25) !important;
     }
     
     .modern-form input:focus,
     .modern-form select:focus,
     .modern-form textarea:focus {
-        border-color: #ff6b35 !important;
-        background: rgba(255,255,255,0.15) !important;
-    }
-    
-    .btn-submit {
-        width: 100% !important;
-        background: linear-gradient(45deg, #ff6b35, #f7931e) !important;
-    }
-    
-    .info-grid {
-        display: block !important;
+        background: rgba(255,255,255,0.18) !important;
     }
     
     .info-card {
-        margin-bottom: 1.5rem;
-        background: rgba(255,255,255,0.1) !important;
-        backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255,107,53,0.3) !important;
+        background: rgba(255,255,255,0.12) !important;
     }
 }
 
-/* Small Mobile Adjustments */
+/* Small Mobile - Background Only */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 0.8rem;
-    }
-    
-    .order-hero h1,
-    .reservation-hero h1 {
-        font-size: 1.8rem !important;
-    }
-    
     .form-container,
-    .modern-form,
-    .cart-summary {
-        padding: 1rem !important;
-    }
-    
-    .form-input {
-        padding: 0.9rem !important;
-        font-size: 0.95rem !important;
-    }
-    
-    .btn-primary,
-    .btn-submit {
-        padding: 1rem !important;
-        font-size: 1rem !important;
+    .modern-form {
+        background: rgba(255,255,255,0.1) !important;
     }
 }
 
-/* Payment Details Mobile */
+/* Payment Details - Background Only */
 @media (max-width: 768px) {
-    .payment-details {
-        margin-top: 1rem;
-    }
-    
     .payment-card {
-        background: rgba(255,255,255,0.05) !important;
-        backdrop-filter: blur(10px) !important;
-        border: 1px solid rgba(255,107,53,0.2) !important;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
+        background: rgba(255,255,255,0.08) !important;
     }
     
     .bank-item {
-        background: rgba(255,255,255,0.1) !important;
-        border-radius: 8px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .qris-container {
-        text-align: center;
-    }
-    
-    .qris-code img {
-        width: 150px !important;
-        height: 150px !important;
+        background: rgba(255,255,255,0.12) !important;
     }
 }

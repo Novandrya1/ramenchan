@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - RamenChan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/menu-modal.css">
+    <link rel="stylesheet" href="css/admin-modal.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/footer-modern.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-logo">RamenChan</div>
+        <nav class="navbar-nav">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">Tentang Kami</a>
+            <a href="menu.html">Menu</a>
+            <a href="index.html#promo">Promo</a>
+            <a href="reservation.html">Reservasi</a>
+            <a href="order.html">Pemesanan</a>
+            <a href="admin.html">Admin</a>
+            <a href="index.html#contact">Kontak</a>
+        </nav>
+        <div class="navbar-extra">
+            <a href="order.html" id="cart-icon">
+                <i data-feather="shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="admin-hero">
+            <div class="container">
+                <div class="admin-header">
+                    <div class="admin-title">
+                        <h1>Dashboard Admin</h1>
+                        <p>Kelola restoran RamenChan dengan mudah dan efisien</p>
+                    </div>
+                    <div class="admin-actions">
+                        <button class="btn-refresh" onclick="refreshData()">
+                            <i data-feather="refresh-cw"></i>
+                            Refresh Data
+                        </button>
+                        <div class="admin-time" id="current-time"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="admin-dashboard">
+            <div class="container">
+                <!-- Statistics Cards -->
+                <div class="dashboard-stats">
+                    <div class="stat-card revenue">
+                        <div class="stat-icon">
+                            <i data-feather="dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="revenue-stat">Rp 0</h3>
+                            <p>Pendapatan Hari Ini</p>
+                            <span class="stat-change positive">+12.5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card orders">
+                        <div class="stat-icon">
+                            <i data-feather="shopping-bag"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="orders-stat">0</h3>
+                            <p>Pesanan Hari Ini</p>
+                            <span class="stat-change positive">+8.2%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card reservations">
+                        <div class="stat-icon">
+                            <i data-feather="calendar"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="reservations-stat">0</h3>
+                            <p>Reservasi Hari Ini</p>
+                            <span class="stat-change positive">+15.3%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card customers">
+                        <div class="stat-icon">
+                            <i data-feather="users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="customers-stat">0</h3>
+                            <p>Total Pelanggan</p>
+                            <span class="stat-change positive">+5.7%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2>Aksi Cepat</h2>
+                    <div class="action-grid">
+                        <button class="action-btn" onclick="openAddMenuModal()">
+                            <i data-feather="plus-circle"></i>
+                            <span>Tambah Menu</span>
+                        </button>
+                        
+                        <button class="action-btn" onclick="viewOrders()">
+                            <i data-feather="list"></i>
+                            <span>Lihat Pesanan</span>
+                        </button>
+                        
+                        <button class="action-btn" onclick="viewReservations()">
+                            <i data-feather="calendar-plus"></i>
+                            <span>Kelola Reservasi</span>
+                        </button>
+                        
+                        <button class="action-btn" onclick="generateReport()">
+                            <i data-feather="bar-chart-2"></i>
+                            <span>Laporan</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Management Tabs -->
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="orders">Pesanan Terbaru</button>
+                    <button class="tab-btn" data-tab="reservations">Reservasi</button>
+                    <button class="tab-btn" data-tab="menu">Menu</button>
+                    <button class="tab-btn" data-tab="analytics">Analytics</button>
+                </div>
+                
+                <!-- Tab Contents -->
+                <div class="tab-content active" id="orders">
+                    <div class="section-header">
+                        <h3>Pesanan Terbaru</h3>
+                        <div class="header-actions">
+                            <select class="filter-select">
+                                <option value="all">Semua Status</option>
+                                <option value="pending">Menunggu</option>
+                                <option value="processing">Diproses</option>
+                                <option value="completed">Selesai</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Pelanggan</th>
+                                    <th>Menu</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Waktu</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table">
+                                <!-- Data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="reservations">
+                    <div class="section-header">
+                        <h3>Manajemen Reservasi</h3>
+                        <button class="btn-primary">Tambah Reservasi</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Telepon</th>
+                                    <th>Tanggal</th>
+                                    <th>Waktu</th>
+                                    <th>Tamu</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reservations-table">
+                                <!-- Data will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="menu">
+                    <div class="section-header">
+                        <h3>Manajemen Menu</h3>
+                        <div class="header-actions">
+                            <select class="filter-select" id="menu-filter">
+                                <option value="all">Semua Menu</option>
+                                <option value="available">Tersedia</option>
+                                <option value="unavailable">Habis</option>
+                            </select>
+                            <button class="btn-primary" onclick="openAddMenuModal()">Tambah Menu</button>
+                        </div>
+                    </div>
+                    <div class="menu-grid-admin" id="menu-grid-admin">
+                        <!-- Menu cards will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="analytics">
+                    <div class="analytics-grid">
+                        <div class="chart-card">
+                            <h3>Penjualan Mingguan</h3>
+                            <div class="chart-placeholder">
+                                <i data-feather="trending-up"></i>
+                                <p>Chart akan ditampilkan di sini</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-card">
+                            <h3>Menu Terpopuler</h3>
+                            <div class="popular-menu-list">
+                                <div class="popular-item">
+                                    <span class="rank">1</span>
+                                    <span class="name">Tonkotsu Ramen</span>
+                                    <span class="count">156 pesanan</span>
+                                </div>
+                                <div class="popular-item">
+                                    <span class="rank">2</span>
+                                    <span class="name">Chicken Katsu Ramen</span>
+                                    <span class="count">142 pesanan</span>
+                                </div>
+                                <div class="popular-item">
+                                    <span class="rank">3</span>
+                                    <span class="name">Spicy Miso Ramen</span>
+                                    <span class="count">128 pesanan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Menu Detail Modal -->
+        <div id="adminMenuModal" class="menu-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img id="adminModalImage" src="" alt="Menu Item">
+                    <button class="modal-close" onclick="closeAdminMenuModal()">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="adminModalTitle" class="modal-title"></h2>
+                    <span id="adminModalCategory" class="modal-category"></span>
+                    <p id="adminModalDescription" class="modal-description"></p>
+                    
+                    <div class="modal-ingredients">
+                        <h4>Bahan Utama:</h4>
+                        <div id="adminModalIngredients" class="ingredients-list"></div>
+                    </div>
+                    
+                    <div class="admin-controls">
+                        <div class="availability-control">
+                            <h4>Status Ketersediaan:</h4>
+                            <div class="availability-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="availabilityToggle" onchange="toggleAvailability()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span id="availabilityText" class="availability-text">Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <div id="adminModalPrice" class="modal-price"></div>
+                        <div class="modal-actions">
+                            <button class="btn-edit" onclick="editMenuItem()">
+                                <i data-feather="edit"></i>
+                                Edit Menu
+                            </button>
+                            <button class="btn-delete" onclick="deleteMenuItem()">
+                                <i data-feather="trash-2"></i>
+                                Hapus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add/Edit Menu Form Modal -->
+        <div id="menuFormModal" class="menu-modal">
+            <div class="modal-content form-modal">
+                <div class="modal-header-form">
+                    <h2 id="formModalTitle">Tambah Menu Baru</h2>
+                    <button class="modal-close" onclick="closeMenuFormModal()">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="menuForm">
+                        <input type="hidden" id="editMenuId">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="menuName">Nama Menu</label>
+                                <input type="text" id="menuName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="menuCategory">Kategori</label>
+                                <select id="menuCategory" required>
+                                    <option value="ramen">Ramen</option>
+                                    <option value="udon">Udon</option>
+                                    <option value="appetizer">Appetizer</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="menuPrice">Harga (Rp)</label>
+                                <input type="number" id="menuPrice" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="menuStatus">Status</label>
+                                <select id="menuStatus">
+                                    <option value="available">Tersedia</option>
+                                    <option value="unavailable">Habis</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="menuDescription">Deskripsi</label>
+                            <textarea id="menuDescription" rows="3" placeholder="Deskripsi menu..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="menuIngredients">Bahan Utama (pisahkan dengan koma)</label>
+                            <input type="text" id="menuIngredients" placeholder="Mie Ramen, Kuah Kaldu, Daging Ayam, Telur">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" onclick="closeMenuFormModal()">Batal</button>
+                            <button type="submit" class="btn-save">Simpan Menu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer akan dimuat oleh footer.js -->
+    <footer></footer>
+    
+    <script>
+        feather.replace();
+    </script>
+    <script src="js/database.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

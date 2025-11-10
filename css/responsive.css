@@ -1,0 +1,120 @@
+/* Responsive Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-padding {
+    padding: 8rem 0 4rem;
+}
+
+.reservation, .order, .admin {
+    padding: 8rem 0 4rem;
+    min-height: 100vh;
+}
+
+.reservation h2, .order h2, .admin h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-input, .form-input select, .form-input textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.form-input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+select option {
+    background: var(--gray);
+    color: var(--white);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Mobile Responsive - Form & Layout Only */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero .content {
+        padding: 2rem 5%;
+    }
+    
+    .about .row, .contact .row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about .row .about-img img {
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .navbar-nav {
+        width: 100vw;
+        right: -100%;
+        height: calc(100vh - 70px);
+    }
+    
+    .navbar .navbar-nav a {
+        padding: 1.2rem 1rem;
+        font-size: 1.1rem;
+        justify-content: center;
+    }
+    
+    .navbar .navbar-nav a:hover {
+        padding-left: 1rem;
+    }
+    
+    .hero .content {
+        padding: 2rem 3%;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .navbar-extra {
+        gap: 0.5rem;
+    }
+    
+    .navbar-extra a {
+        padding: 0.3rem;
+        font-size: 1.2rem;
+    }
+}

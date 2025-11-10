@@ -1,0 +1,215 @@
+/* Modern Order Page Styles */
+.order-hero {
+    padding: 12rem 0 4rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    text-align: center;
+    color: var(--white);
+}
+
+.order-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.order-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.order-process {
+    padding: 3rem 0;
+    background: var(--gray);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.step-item {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+}
+
+.step-item.active .step-number {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.step-text h4 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.step-text p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.order-content {
+    padding: 4rem 0;
+}
+
+.quick-add-section {
+    background: var(--gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.quick-add-section h3 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.order-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.form-container {
+    background: var(--gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.form-container h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.cart-summary {
+    background: var(--gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.delivery-info {
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.delivery-info h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.delivery-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.payment-method {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method:hover,
+.payment-method.selected {
+    border-color: var(--primary);
+    background: rgba(255, 107, 53, 0.1);
+}
+
+.payment-method i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.payment-method span {
+    display: block;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .process-steps::before {
+        display: none;
+    }
+    
+    .order-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .cart-summary {
+        position: static;
+        order: -1;
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+}

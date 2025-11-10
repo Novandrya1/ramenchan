@@ -1,0 +1,256 @@
+/* Order Page Mobile Styles */
+
+@media (max-width: 768px) {
+    /* Order Process Steps */
+    .process-steps {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .step-item {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 1rem !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 10px !important;
+    }
+    
+    .step-number {
+        margin-right: 1rem !important;
+        margin-bottom: 0 !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .step-text {
+        text-align: left !important;
+    }
+    
+    .step-text h4 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+    
+    .step-text p {
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+    }
+    
+    /* Quick Menu Grid */
+    .quick-menu-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+    
+    .quick-menu-item {
+        padding: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .quick-menu-item img {
+        width: 60px !important;
+        height: 60px !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .quick-menu-item h4 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .quick-menu-item p {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Order Container */
+    .order-container {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .form-container {
+        order: 2 !important;
+        padding: 1.5rem !important;
+    }
+    
+    .cart-summary {
+        order: 1 !important;
+        padding: 1.5rem !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Form Styles */
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .form-input {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .btn-primary {
+        width: 100% !important;
+        padding: 1.2rem !important;
+        font-size: 1.1rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    /* Payment Details Mobile */
+    .payment-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .payment-icon {
+        margin: 0 auto 1rem !important;
+    }
+    
+    .qris-container {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .qris-code img {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    .bank-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .app-icons {
+        justify-content: center !important;
+        gap: 0.5rem !important;
+    }
+    
+    .app-icon {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+    
+    /* Cart Summary Mobile */
+    .cart-item {
+        padding: 1rem !important;
+        border-radius: 8px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .item-info h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .item-quantity {
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    .qty-btn {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1rem !important;
+    }
+    
+    .qty-display {
+        min-width: 40px !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+    }
+    
+    .remove-item {
+        width: 100% !important;
+        margin-top: 0.5rem !important;
+        padding: 0.5rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .cart-total {
+        padding: 1rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .total-row {
+        padding: 0.8rem 0 !important;
+        font-size: 1rem !important;
+    }
+    
+    .total-final {
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small mobile adjustments */
+    .quick-menu-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .step-item {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .step-number {
+        margin-right: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .step-text {
+        text-align: center !important;
+    }
+    
+    .payment-card {
+        padding: 1rem !important;
+    }
+    
+    .qris-code img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .bank-item {
+        padding: 0.8rem !important;
+    }
+    
+    .form-container,
+    .cart-summary {
+        padding: 1rem !important;
+    }
+    
+    .item-quantity {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .qty-controls {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+}

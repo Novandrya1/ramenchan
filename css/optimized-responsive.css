@@ -1,0 +1,113 @@
+/* Optimized Responsive CSS - Mengatasi konflik dan meningkatkan performa */
+
+/* Performance Optimizations */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* Smooth scrolling dengan fallback */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Optimasi untuk touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .navbar .navbar-nav a:hover {
+        background: rgba(255, 107, 53, 0.1);
+    }
+    
+    .menu-card:hover {
+        transform: none;
+    }
+    
+    .promo-card:hover {
+        transform: none;
+    }
+}
+
+/* Critical Mobile Fixes */
+@media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Optimize images for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Better touch targets */
+    button, .btn, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Optimize form inputs */
+    input, textarea, select {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Fix viewport issues */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height */
+    }
+}
+
+/* Small Mobile Optimizations */
+@media (max-width: 480px) {
+    /* Reduce non-essential animations for better performance */
+    .menu-card, .promo-card, .news-card {
+        transition-duration: 0.1s;
+    }
+    
+    .navbar .navbar-nav {
+        transition: 0.2s ease;
+    }
+    
+    /* Optimize text rendering */
+    body {
+        text-rendering: optimizeSpeed;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Better button spacing */
+    .btn, button {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar, .footer, .floating-elements {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #ff4500;
+        --secondary: #ff6600;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

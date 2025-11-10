@@ -1,0 +1,73 @@
+/* Conflict Resolution CSS - Mengatasi konflik spesifik */
+
+/* Fix z-index conflicts */
+.navbar {
+    z-index: 9999;
+}
+
+.navbar .navbar-nav {
+    z-index: 10000;
+}
+
+body.menu-open::before {
+    z-index: 9998;
+}
+
+/* Prevent CSS conflicts dengan specificity yang tepat */
+@media (max-width: 768px) {
+    /* Override hanya yang diperlukan */
+    .mobile-responsive-override {
+        /* Placeholder untuk override spesifik jika diperlukan */
+    }
+    
+    /* Ensure proper stacking context */
+    .hero {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .hero .content {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* Performance optimizations untuk mobile */
+@media (max-width: 480px) {
+    /* Reduce repaints and reflows */
+    * {
+        will-change: auto;
+    }
+    
+    /* Optimize transforms */
+    .navbar .navbar-nav {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .navbar .navbar-nav.active {
+        transform: translateX(0);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .navbar .navbar-nav {
+        transition: none;
+    }
+    
+    .menu-card, .promo-card {
+        transition: none;
+    }
+}
+
+/* High contrast mode fixes */
+@media (prefers-contrast: high) {
+    .navbar {
+        border-bottom: 2px solid var(--primary);
+    }
+    
+    .menu-card, .promo-card {
+        border: 2px solid var(--primary);
+    }
+}

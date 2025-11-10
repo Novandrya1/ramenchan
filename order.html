@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan - RamenChan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/order-modern.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/order-mobile.css">
+    <link rel="stylesheet" href="css/footer-modern.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-logo">RamenChan</div>
+        <nav class="navbar-nav">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">Tentang Kami</a>
+            <a href="menu.html">Menu</a>
+            <a href="index.html#promo">Promo</a>
+            <a href="reservation.html">Reservasi</a>
+            <a href="order.html">Pemesanan</a>
+            <a href="admin.html">Admin</a>
+            <a href="index.html#contact">Kontak</a>
+        </nav>
+        <div class="navbar-extra">
+            <a href="wishlist.html" id="wishlist-btn"><i data-feather="heart"></i><span id="wishlist-count">0</span></a>
+            <a href="order.html" id="cart-icon">
+                <i data-feather="shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </header>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Pemesanan</span>
+        </div>
+    </div>
+    
+    <main>
+        <section class="order-hero">
+            <div class="container">
+                <h1>Pesan Delivery</h1>
+                <p>Pesan makanan favorit Anda dan nikmati di rumah dengan layanan delivery terpercaya</p>
+            </div>
+        </section>
+        
+        <section class="order-process">
+            <div class="container">
+                <div class="process-steps">
+                    <div class="step-item active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-text">
+                            <h4>Pilih Menu</h4>
+                            <p>Pilih menu favorit Anda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-text">
+                            <h4>Isi Data</h4>
+                            <p>Lengkapi informasi pengiriman</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-text">
+                            <h4>Pembayaran</h4>
+                            <p>Pilih metode pembayaran</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-text">
+                            <h4>Selesai</h4>
+                            <p>Pesanan sedang diproses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="order-content" id="order">
+            <div class="container">
+                
+                <div class="quick-add-section">
+                    <h3>Pilih Menu Cepat</h3>
+                    <div class="quick-menu-grid" id="quick-menu-grid">
+                        <!-- Menu items will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="order-container">
+                    <div class="form-container">
+                        <h3>Informasi Pengiriman</h3>
+                        <form id="order-form">
+                            <div class="form-group">
+                                <label for="customer-name">Nama Lengkap</label>
+                                <input type="text" id="customer-name" name="name" class="form-input" placeholder="Masukkan nama lengkap" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customer-phone">Nomor Telepon</label>
+                                <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="Contoh: 08123456789" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Alamat Lengkap</label>
+                                <textarea id="address" name="address" class="form-input" rows="3" placeholder="Masukkan alamat lengkap untuk pengiriman" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="delivery-time">Waktu Pengiriman</label>
+                                    <select id="delivery-time" name="delivery_time" class="form-input" required>
+                                        <option value="">Pilih waktu pengiriman</option>
+                                        <option value="asap">Secepatnya (30-45 menit)</option>
+                                        <option value="1hour">1 Jam</option>
+                                        <option value="2hour">2 Jam</option>
+                                        <option value="custom">Waktu Khusus</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="payment-method">Metode Pembayaran</label>
+                                    <select id="payment-method" name="payment" class="form-input" required onchange="showPaymentDetails(this.value)">
+                                        <option value="">Pilih pembayaran</option>
+                                        <option value="cash">Bayar di Tempat (COD)</option>
+                                        <option value="bank">Transfer Bank</option>
+                                        <option value="qris">QRIS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div id="payment-details" class="payment-details" style="display: none;">
+                                <div id="cod-details" class="payment-info" style="display: none;">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i data-feather="truck"></i>
+                                        </div>
+                                        <div class="payment-content">
+                                            <h4>Cash on Delivery (COD)</h4>
+                                            <p>Bayar langsung kepada kurir saat pesanan tiba</p>
+                                            <div class="payment-note">
+                                                <i data-feather="info"></i>
+                                                <span>Siapkan uang pas untuk memudahkan transaksi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="bank-details" class="payment-info" style="display: none;">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i data-feather="credit-card"></i>
+                                        </div>
+                                        <div class="payment-content">
+                                            <h4>Transfer Bank</h4>
+                                            <div class="bank-accounts">
+                                                <div class="bank-item">
+                                                    <div class="bank-logo">BCA</div>
+                                                    <div class="bank-info">
+                                                        <span class="account-number">1234567890</span>
+                                                        <span class="account-name">RamenChan Restaurant</span>
+                                                    </div>
+                                                </div>
+                                                <div class="bank-item">
+                                                    <div class="bank-logo mandiri">Mandiri</div>
+                                                    <div class="bank-info">
+                                                        <span class="account-number">0987654321</span>
+                                                        <span class="account-name">RamenChan Restaurant</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="payment-total">
+                                                <span>Total yang harus dibayar:</span>
+                                                <strong id="payment-total-amount">Rp 0</strong>
+                                            </div>
+                                            <div class="payment-note">
+                                                <i data-feather="upload"></i>
+                                                <span>Upload bukti transfer setelah pembayaran</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="qris-details" class="payment-info" style="display: none;">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i data-feather="smartphone"></i>
+                                        </div>
+                                        <div class="payment-content">
+                                            <h4>QRIS Payment</h4>
+                                            <div class="qris-container">
+                                                <div class="qris-code">
+                                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=RamenChan-Payment" alt="QRIS Code">
+                                                </div>
+                                                <div class="qris-info">
+                                                    <div class="payment-total">
+                                                        <span>Total pembayaran:</span>
+                                                        <strong id="qris-total-amount">Rp 0</strong>
+                                                    </div>
+                                                    <div class="qris-apps">
+                                                        <span>Scan dengan:</span>
+                                                        <div class="app-icons">
+                                                            <span class="app-icon">GoPay</span>
+                                                            <span class="app-icon">OVO</span>
+                                                            <span class="app-icon">DANA</span>
+                                                            <span class="app-icon">ShopeePay</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="payment-note">
+                                                <i data-feather="smartphone"></i>
+                                                <span>Scan kode QRIS dengan aplikasi pembayaran Anda</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-notes">Catatan Pesanan (Opsional)</label>
+                                <textarea id="order-notes" name="notes" class="form-input" rows="2" placeholder="Catatan khusus untuk pesanan Anda"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Buat Pesanan</button>
+                        </form>
+                    </div>
+                    
+                    <div class="cart-summary" id="cart-summary">
+                        <h3>Ringkasan Pesanan</h3>
+                        <div class="cart-items" id="cart-items">
+                            <p class="empty-cart">Keranjang masih kosong. <a href="menu.html">Pilih menu</a></p>
+                        </div>
+                        <div class="cart-total" id="cart-total" style="display: none;">
+                            <div class="total-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">Rp 0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Ongkir:</span>
+                                <span id="delivery-fee">Rp 5.000</span>
+                            </div>
+                            <div class="total-row total-final">
+                                <span>Total:</span>
+                                <span id="final-total">Rp 5.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="order-message"></div>
+                
+                <div id="payment-status" style="display: none;">
+                    <div class="payment-waiting">
+                        <h3>Menunggu Pembayaran</h3>
+                        <p>Silakan lakukan pembayaran sesuai metode yang dipilih</p>
+                        <div class="status-indicator">
+                            <div class="spinner"></div>
+                            <span>Menunggu konfirmasi pembayaran...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer akan dimuat oleh footer.js -->
+    <footer></footer>
+    <script>
+        feather.replace();
+    </script>
+    <script src="js/database.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

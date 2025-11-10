@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - RamenChan</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/menu-modern.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/mobile-responsive.css" />
+    <link rel="stylesheet" href="css/menu-modal.css" />
+    <link rel="stylesheet" href="css/footer-modern.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-logo">RamenChan</div>
+      <nav class="navbar-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">Tentang Kami</a>
+        <a href="menu.html">Menu</a>
+        <a href="index.html#promo">Promo</a>
+        <a href="reservation.html">Reservasi</a>
+        <a href="order.html">Pemesanan</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html#contact">Kontak</a>
+      </nav>
+      <div class="navbar-extra">
+        <a href="wishlist.html" id="wishlist-btn"><i data-feather="heart"></i><span id="wishlist-count">0</span></a>
+        <a href="order.html" id="cart-icon">
+          <i data-feather="shopping-cart"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </header>
+    
+    <div class="breadcrumb">
+      <div class="container">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Menu</span>
+      </div>
+    </div>
+    
+    <main>
+      <section class="menu-hero">
+        <div class="container">
+          <h1>Menu RamenChan</h1>
+          <p>Jelajahi koleksi lengkap ramen autentik dan hidangan Jepang lainnya</p>
+        </div>
+      </section>
+      
+      <section class="menu-navigation">
+        <div class="container">
+          <div class="menu-nav-tabs">
+            <button class="menu-tab active" data-category="all">Semua Menu</button>
+            <button class="menu-tab" data-category="ramen">Ramen</button>
+            <button class="menu-tab" data-category="udon">Udon</button>
+            <button class="menu-tab" data-category="appetizer">Appetizer</button>
+          </div>
+          
+          <div class="menu-search">
+            <input type="text" id="menu-search" placeholder="Cari menu...">
+            <i data-feather="search"></i>
+          </div>
+        </div>
+      </section>
+      
+      <section class="menu-content">
+        <div class="container">
+          <div class="menu-grid-modern" id="menu-grid">
+            <!-- Menu items will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Menu Detail Modal -->
+    <div id="menuModal" class="menu-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img id="modalImage" src="" alt="Menu Item">
+          <button class="modal-close" onclick="closeMenuModal()">
+            <i data-feather="x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <span id="modalCategory" class="modal-category"></span>
+          <p id="modalDescription" class="modal-description"></p>
+          
+          <div class="modal-ingredients">
+            <h4>Bahan Utama:</h4>
+            <div id="modalIngredients" class="ingredients-list"></div>
+          </div>
+          
+          <div class="modal-footer">
+            <div id="modalPrice" class="modal-price"></div>
+            <div class="modal-actions">
+              <button id="modalWishlistBtn" class="btn-wishlist" onclick="toggleModalWishlist()">
+                <i data-feather="heart"></i>
+              </button>
+              <button id="modalAddToCart" class="btn-add-to-cart" onclick="addModalToCart()">
+                <i data-feather="shopping-cart"></i>
+                Tambah ke Keranjang
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer akan dimuat oleh footer.js -->
+    <footer></footer>
+    
+    <script>
+      feather.replace();
+    </script>
+    <script src="js/database.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>

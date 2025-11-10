@@ -3,213 +3,353 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RamenChan</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" a href="https://fonts.googleapis.com">
-<link rel="preconnect" a href="https://fonts.gstatic.com" crossorigin>
-<link a href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,
-              200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,
-              400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-
-    <!-- Feather icons  -->
+    <title>RamenChan - Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero-modern.css" />
+    <link rel="stylesheet" href="css/about-modern.css" />
+    <link rel="stylesheet" href="css/menu-preview.css" />
+    <link rel="stylesheet" href="css/promo-news.css" />
+    <link rel="stylesheet" href="css/mobile-responsive.css" />
+    <link rel="stylesheet" href="css/footer-modern.css" />
+    <link rel="stylesheet" href="css/contact-modern.css" />
+    <link rel="stylesheet" href="css/optimized-responsive.css" />
+    <link rel="stylesheet" href="css/conflict-fixes.css" />
+    <link rel="stylesheet" href="css/cart.css" />
     <script src="https://unpkg.com/feather-icons"></script>
-    
-    
-    <!-- My style -->
-    <link rel="stylesheet" a href="css/style.css">
-
   </head>
-
-
   <body>
-
-    <!-- Navbar start -->
-    <nav class="navbar">
-       <a href="#" class="navbar-logo">Ramen<span>Chan</span></a>  
-       
-       
-    <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#menu">Menu</a>
-        <a href="#contact">kontak</a>
-    </div>
-
-
-    <div class="navbar-extra">
-       <a href="#" id="search"><i> <i data-feather="search"></i></a>
-       <a href="#" id="shopping-cart"><i> <i data-feather="shopping-cart"></i></a>
-       <a href="#" id="hamburger-menu"><i> <i data-feather="menu"></i></a>
-
-        </div>
-    </nav>
-
-    <!-- Navbar end  -->
-
-    <!-- Hero section start -->
-
-    <section class="hero" id="home">
-    <main class="content">
-      <h1>Ramen<span>Chan!</span></h1>
-      <p>Halal certificate</p>
-        <p>1st Ramen Maid Cafe</p>
-        <p>Semangkok Ramen Mulai 25K</p>
-        
-      <a href="#" class="cta">Beli Sekarang</a>
-
-    </main>
-  </section>
-    <!-- Hero section end -->
-
-
-    <!-- about section start -->
-     <section id="about" class="about">
-      <h2><span>Tentang</span> Kami</h2>
-
-      <div class="row">
-        <div class="about-img">
-          <img src="img/tentang-kami.jpg" 
-          alt="Tentang Kami">
-        </div>
-<div class="content">
-<h3> Kenapa Memilih<span> Ramen Kami?</span></h3>  
-<p>RamenChan adalah brand yang bergerak bidang industry F&B di Indonesia, khususnya di Pulau Jawa.
-   Sebagai brand F&B kepercayaan masyarakat, kami menyajikan lebih dari 10 varian ramen serta menu 
-   makanan khas Jepang lainnya dengan mengutamakan kelezatan, harga yang terjangkau, dan inovasi 
-   untuk dunia kuliner saat ini. Kami telah tersebar 6 gerai RAMENCHAN di Jawa Timur 
-   dan terus akan bertambah lagi penyebarannya secara nasional.
-
-  <p>Tentunya kami senang bila saat ini, RamenChan menjadi kepercayaan seluruh elemen Masyarakat Indonesia, 
-    mulai anak kecil, remaja, hingga dewasa.</p>
-   
-</div>
+    <header class="navbar">
+      <div class="navbar-logo">RamenChan</div>
+      <nav class="navbar-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">Tentang Kami</a>
+        <a href="menu.html">Menu</a>
+        <a href="index.html#promo">Promo</a>
+        <a href="reservation.html">Reservasi</a>
+        <a href="order.html">Pemesanan</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html#contact">Kontak</a>
+      </nav>
+      <div class="navbar-extra">
+        <a href="order.html" id="cart-icon">
+          <i data-feather="shopping-cart"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
-     </section> 
-    <!-- about section end -->
-
-
-    <!-- Menu section start -->
-    <section id="menu" class="menu">
-      <h2><span>Menu</span> Kami</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum maiores excepturi deleniti voluptates aut non?</p>
-
-    <div class="row">
-      <div class="menu-card">
-        <img src="img/menu/1.jpeg"
-         alt="Chan Chan Miso Ori" class="menu-card-img">
-         <h3 class="menu-card-title">-Kan Men Beef Ori-</h3>
-         <p class="menu-card-price">IDR=30K</p>
+    </header>
+    <section class="hero hero-modern" id="home">
+      <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
       </div>
-      <div class="menu-card">
-        <img src="img/menu/2.jpeg"
-         alt="Chan Chan Miso Ori" class="menu-card-img">
-         <h3 class="menu-card-title">- Katsu Miso Ori-</h3>
-         <p class="menu-card-price">IDR=20K</p>
+      <div class="content">
+        <h1>Selamat Datang di RamenChan</h1>
+        <p class="subtitle">Nikmati kelezatan ramen autentik Jepang dengan cita rasa yang tak terlupakan</p>
+        <div class="cta-group">
+          <a href="order.html" class="cta cta-primary">
+            <i data-feather="shopping-bag"></i>
+            Pesan Sekarang
+          </a>
+          <a href="reservation.html" class="cta cta-secondary">
+            <i data-feather="calendar"></i>
+            Reservasi Meja
+          </a>
+        </div>
       </div>
-      <div class="menu-card">
-        <img src="img/menu/3.jpeg"
-         alt="Chan Chan Miso Ori" class="menu-card-img">
-         <h3 class="menu-card-title">-Pok Pok Shoyu spicy-</h3>
-         <p class="menu-card-price">IDR=20K</p>
-      </div>
-    <div class="menu-card">
-      <img src="img/menu/4.jpeg"
-       alt="Chan Chan Miso Ori" class="menu-card-img">
-       <h3 class="menu-card-title">-Caramelized Chiken Don-</h3>
-       <p class="menu-card-price">IDR=25K</p>
-    </div>
-    <div class="menu-card">
-      <img src="img/menu/5.jpeg"
-       alt="Chan Chan Miso Ori" class="menu-card-img">
-       <h3 class="menu-card-title">-Beef Ground-</h3>
-       <p class="menu-card-price">IDR=30K</p>
-    </div>
-    <div class="menu-card">
-      <img src="img/menu/6.jpeg"
-       alt="Chan Chan Miso Ori" class="menu-card-img">
-       <h3 class="menu-card-title">-Katsu Shoyu Ori-</h3>
-       <p class="menu-card-price">IDR=20K</p>
-    </div>
-  </div>
-  </section>
-
-    <!-- Menu section end -->
-
-    <!-- contact section start -->
-
-    <section id="contact" class="contact">
-      <h2><span>Kontak</span> Kami</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, officiis.</p>
-
-      <div class="row">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.648128174917!2d112.59864767424705!3d-7.166613070318696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77ff8084129849%3A0xc73453487648fcc1!2sRamenchan%20-%20Icon%20mall%20Gresik!5e0!3m2!1sid!2sid!4v1709371273851!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-
-
-      <form action="">
-        <div class="input-group">
-          <i data-feather="user"></i>
-          <input type="text" 
-          placeholder="nama">
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">1000+</span>
+          <span class="stat-label">Pelanggan Puas</span>
         </div>
-        <div class="input-group">
-          <i data-feather="mail"></i>
-          <input type="text" 
-          placeholder="email">
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Varian Ramen</span>
         </div>
-        <div class="input-group">
-          <i data-feather="phone"></i>
-          <input type="text" 
-          placeholder="no hp">
+        <div class="stat-item">
+          <span class="stat-number">5★</span>
+          <span class="stat-label">Rating</span>
         </div>
-
-        <button type="submit" class="btn">Kirim Pesan</button>
-      </form>
-
       </div>
     </section>
-
-    <!-- contact section end -->
-
-    <!-- Footer start -->
+    <section class="about-modern" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Tentang RamenChan</h2>
+            <p class="about-subtitle">Menghadirkan cita rasa autentik Jepang sejak 2020</p>
+            
+            <div class="about-story">
+              <p>RamenChan lahir dari kecintaan mendalam terhadap kuliner Jepang yang autentik. Kami berkomitmen menghadirkan pengalaman makan ramen terbaik dengan resep tradisional yang telah diwariskan turun-temurun.</p>
+              
+              <p>Setiap mangkuk ramen kami dibuat dengan penuh perhatian, menggunakan bahan-bahan berkualitas premium yang diimpor langsung dari Jepang untuk memastikan keaslian rasa.</p>
+            </div>
+            
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-feather="award"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Resep Autentik</h4>
+                  <p>Resep tradisional dari chef berpengalaman Jepang</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-feather="heart"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Bahan Premium</h4>
+                  <p>Menggunakan bahan berkualitas tinggi dan segar</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-feather="users"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Pelayanan Terbaik</h4>
+                  <p>Tim yang berpengalaman dan ramah melayani Anda</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-visual">
+            <div class="about-image-main">
+              <img src="img/tentang-kami.jpg" alt="RamenChan Restaurant">
+            </div>
+            
+            <div class="about-stats">
+              <div class="stat-box">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Tahun Berpengalaman</span>
+              </div>
+              
+              <div class="stat-box">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">Mangkuk Terjual</span>
+              </div>
+              
+              <div class="stat-box">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Kepuasan Pelanggan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
-      <footer>
-
-        <div class="socials">
-          <a href="#"><i data-feather="instagram"></i></a>
-          <a href="#"><i data-feather="twitter"></i></a>
-          <a href="#"><i data-feather="facebook"></i></a>
+    <section class="menu-preview" id="menu-preview">
+      <div class="container">
+        <h2>Menu Favorit</h2>
+        <p class="section-desc">Pilihan ramen terbaik yang paling disukai pelanggan</p>
+        
+        <div class="menu-categories-nav">
+          <button class="category-nav-btn active" data-category="all">Semua</button>
+          <button class="category-nav-btn" data-category="ramen">Ramen</button>
+          <button class="category-nav-btn" data-category="udon">Udon</button>
+          <button class="category-nav-btn" data-category="appetizer">Appetizer</button>
         </div>
-
-        <div class="links">
-          <a href="#home">Home</a>
-          <a href="#about">Tentang Kami</a>
-          <a href="#menu">Menu</a>
-          <a href="#contact">Kontak</a>
+        
+        <div class="menu-preview-grid" id="menu-preview-grid">
+          <!-- Menu items will be loaded here -->
         </div>
-
-        <div class="credit">
-          <p>created by <a href="">Novandrya Ramadhan</a>. | &copy; 2024.</p>
+        
+        <div class="menu-cta">
+          <a href="menu.html" class="btn-view-all">Lihat Semua Menu</a>
         </div>
-
-      </footer>
-
-    <!-- Footer end -->
+      </div>
+    </section>
     
-
-  <!-- Feather icons -->
-  <script>
-    feather.replace()
-  </script>
-
-
-<!-- My Javascript -->
-<script src="js/script.js"></script>
-
+    <section class="promo" id="promo">
+      <div class="container">
+        <h2>Promo Spesial</h2>
+        <p class="section-desc">Jangan lewatkan penawaran menarik dari RamenChan</p>
+        <div class="promo-grid">
+          <div class="promo-card featured">
+            <div class="promo-badge">HOT DEAL</div>
+            <img src="img/promo/promo1.jpg" alt="Promo Ramen">
+            <div class="promo-content">
+              <h3>Paket Hemat Ramen</h3>
+              <p>Beli 2 Ramen + 2 Minuman hanya Rp 99.000</p>
+              <div class="promo-price">
+                <span class="old-price">Rp 140.000</span>
+                <span class="new-price">Rp 99.000</span>
+              </div>
+              <button class="promo-btn">Pesan Sekarang</button>
+            </div>
+          </div>
+          
+          <div class="promo-card">
+            <div class="promo-badge">LIMITED</div>
+            <img src="img/promo/promo2.jpg" alt="Promo Appetizer">
+            <div class="promo-content">
+              <h3>Gratis Appetizer</h3>
+              <p>Setiap pembelian Ramen dapat gratis Gyoza</p>
+              <div class="promo-validity">Berlaku hingga 31 Jan 2024</div>
+              <button class="promo-btn">Klaim Promo</button>
+            </div>
+          </div>
+          
+          <div class="promo-card">
+            <div class="promo-badge">NEW</div>
+            <img src="img/promo/promo3.jpg" alt="Menu Baru">
+            <div class="promo-content">
+              <h3>Menu Baru: Spicy Tantanmen</h3>
+              <p>Coba rasa baru dengan diskon 20%</p>
+              <div class="promo-price">
+                <span class="old-price">Rp 55.000</span>
+                <span class="new-price">Rp 44.000</span>
+              </div>
+              <button class="promo-btn">Coba Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="news" id="news">
+      <div class="container">
+        <h2>Berita & Update</h2>
+        <p class="section-desc">Informasi terbaru dari RamenChan</p>
+        <div class="news-grid">
+          <div class="news-card main">
+            <img src="img/news/news1.jpg" alt="Grand Opening">
+            <div class="news-content">
+              <div class="news-meta">
+                <span class="news-date">15 Jan 2024</span>
+                <span class="news-category">Pengumuman</span>
+              </div>
+              <h3>Grand Opening Cabang Baru di Jakarta Selatan</h3>
+              <p>RamenChan dengan bangga mengumumkan pembukaan cabang baru di area Jakarta Selatan dengan konsep yang lebih modern...</p>
+              <a href="#" class="read-more">Baca Selengkapnya</a>
+            </div>
+          </div>
+          
+          <div class="news-sidebar">
+            <div class="news-card small">
+              <img src="img/news/news2.jpg" alt="Menu Baru">
+              <div class="news-content">
+                <div class="news-meta">
+                  <span class="news-date">12 Jan 2024</span>
+                </div>
+                <h4>5 Menu Ramen Terbaru yang Wajib Dicoba</h4>
+                <a href="#" class="read-more">Baca</a>
+              </div>
+            </div>
+            
+            <div class="news-card small">
+              <img src="img/news/news3.jpg" alt="Event">
+              <div class="news-content">
+                <div class="news-meta">
+                  <span class="news-date">10 Jan 2024</span>
+                </div>
+                <h4>Workshop Membuat Ramen Tradisional</h4>
+                <a href="#" class="read-more">Baca</a>
+              </div>
+            </div>
+            
+            <div class="news-card small">
+              <img src="img/news/news4.jpg" alt="Award">
+              <div class="news-content">
+                <div class="news-meta">
+                  <span class="news-date">8 Jan 2024</span>
+                </div>
+                <h4>RamenChan Raih Penghargaan Best Ramen 2024</h4>
+                <a href="#" class="read-more">Baca</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Hubungi Kami</h2>
+        <p class="contact-subtitle">Kami siap melayani Anda dengan sepenuh hati. Hubungi kami untuk reservasi, pertanyaan, atau saran.</p>
+        
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i data-feather="map-pin"></i>
+            </div>
+            <h4>Alamat</h4>
+            <p>Jl. Ramen Street No. 124<br>Kebomas, Gresik, 67978</p>
+          </div>
+          
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i data-feather="phone"></i>
+            </div>
+            <h4>Telepon</h4>
+            <p>+62 21 1234 5678<br>+62 812 3456 7890</p>
+          </div>
+          
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <i data-feather="clock"></i>
+            </div>
+            <h4>Jam Buka</h4>
+            <p>Senin - Minggu<br>10:00 - 22:00 WIB</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.2481124888453!2d-122.08424968529605!3d37.42206557982459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5d64f8701bb%3A0x4c9b7d54c65e1f6b!2sGoogleplex!5e0!3m2!1sen!2sus!4v1633062144921!5m2!1sen!2sus"
+              class="map"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          
+          <div class="contact-form-container">
+            <h3>Kirim Pesan</h3>
+            <form action="#" id="contact-form" novalidate>
+              <input type="hidden" name="csrf_token" id="csrf_token" value="">
+              <div class="input-group">
+                <i data-feather="user"></i>
+                <input type="text" name="name" placeholder="Nama Lengkap" required maxlength="100" />
+              </div>
+              <div class="input-group">
+                <i data-feather="mail"></i>
+                <input type="email" name="email" placeholder="Email" required maxlength="100" />
+              </div>
+              <div class="input-group">
+                <i data-feather="phone"></i>
+                <input type="tel" name="phone" placeholder="Nomor Telepon" required maxlength="20" />
+              </div>
+              <div class="input-group">
+                <i data-feather="message-square"></i>
+                <textarea name="message" placeholder="Pesan Anda" rows="4" required maxlength="500"></textarea>
+              </div>
+              <button type="submit" class="btn">
+                <i data-feather="send"></i>
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer akan dimuat oleh footer.js -->
+    <footer></footer>
+    <script>
+      feather.replace();
+    </script>
+    <script src="js/database.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/security.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/homepage.js"></script>
   </body>
 </html>

@@ -84,16 +84,43 @@
 
 /* Ensure text is always visible */
 .order-hero *,
-.admin-hero * {
+.admin-hero *,
+.reservation-hero * {
     color: inherit !important;
 }
 
 .order-hero h1,
-.admin-hero h1 {
+.admin-hero h1,
+.reservation-hero h1 {
     color: #ffffff !important;
 }
 
 .order-hero p,
-.admin-hero p {
+.admin-hero p,
+.reservation-hero p {
     color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Reservation Hero Mobile Fix */
+@media (max-width: 768px) {
+    .reservation-hero {
+        padding: 6rem 0 3rem !important;
+        min-height: 40vh !important;
+    }
+    
+    .reservation-hero h1 {
+        font-size: 2.2rem !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .reservation-hero p {
+        font-size: 1rem !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+        line-height: 1.5 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+    }
 }

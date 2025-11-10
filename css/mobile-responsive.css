@@ -813,8 +813,32 @@
 /* Reservation Page Mobile */
 @media (max-width: 768px) {
     .reservation-hero {
-        padding: 2rem 0 !important;
+        padding: 6rem 0 3rem !important;
         text-align: center !important;
+        min-height: 40vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .reservation-hero .container {
+        padding: 2rem 1rem !important;
+    }
+    
+    .reservation-hero h1 {
+        font-size: 2.5rem !important;
+        color: var(--white) !important;
+        margin-bottom: 1rem !important;
+        font-weight: 700 !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    .reservation-hero p {
+        font-size: 1.1rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.5 !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
     }
     
     .info-grid {
@@ -870,7 +894,7 @@
     .order-hero {
         padding: 6rem 0 3rem !important;
         text-align: center !important;
-        background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(255, 107, 53, 0.2)) !important;
+        background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
         min-height: 40vh !important;
         display: flex !important;
         align-items: center !important;

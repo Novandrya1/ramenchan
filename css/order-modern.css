@@ -1,28 +1,6 @@
 /* Modern Order Page Styles */
-.breadcrumb {
-    background: var(--gray);
-    padding: 1rem 0;
-    margin-top: 80px;
-}
-
-.breadcrumb .container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.breadcrumb a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
 .order-hero {
-    padding: 8rem 0 4rem;
+    padding: 12rem 0 4rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     text-align: center;
     color: var(--white);
